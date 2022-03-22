@@ -42,6 +42,7 @@ class ImportUsers implements ToModel, WithHeadingRow, WithProgressBar, WithBatch
             'expected_attending' => (int)1,
             'party_name' => $row['party_name'],
             'greeting_name' => $row['greeting_name'],
+            'meal_choice' => json_encode([]),
             'password' => Hash::make($row['password']),
         ]);
     }

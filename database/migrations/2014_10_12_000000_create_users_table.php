@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->boolean('plus_one')->nullable();
             $table->integer('expected_attending');
             $table->integer('total_attending')->nullable();
-            $table->json('meal_choice')->nullable();
+            $table->string('meal_choice')->nullable();
             $table->string('song_recommendations')->nullable();
             $table->rememberToken();
             $table->timestamps();
