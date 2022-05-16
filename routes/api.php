@@ -23,7 +23,7 @@ use App\Http\Controllers\RsvpController;
 Route::post('login', [AuthController::class, 'authenticate']);
 
 Route::group(['middleware' => ['jwt.verify', 'api', \App\Http\Middleware\TrustHosts::class]], function() {
-    Route::get('logout', [AuthController::class, 'logout']);
+    Route::post('logout', [AuthController::class, 'logout']);
     Route::post('get_user', [AuthController::class, 'getUser']);
 
     Route::post('update_rsvp', [RsvpController::class, 'updateUser']);

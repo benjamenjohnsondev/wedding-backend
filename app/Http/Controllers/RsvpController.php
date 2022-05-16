@@ -40,11 +40,11 @@ class RsvpController extends Controller
                     // [{"main": 2, "dessert": 1, "starter": 2, "guest_name": "Thalia Armstrong"}]
                     $mealChoices[] = $values;
                 }
+                $user['meal_choice'] = json_encode($mealChoices);
+            } else {
+                $user['meal_choice'] = json_encode([]);
             }
 
-            if ($guests) {
-                $user['meal_choice'] = json_encode($mealChoices);
-            }
             $user->save();
 
             return response()->json([
