@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         //valid credential
         $validator = Validator::make($credentials, [
-            'party_name' => 'required|string|min:6|max:50',
+            'party_name' => 'required|string|min:3|max:50',
             'password' => 'required|string|min:6|max:50'
         ]);
 
