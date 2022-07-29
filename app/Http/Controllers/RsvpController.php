@@ -35,15 +35,18 @@ class RsvpController extends Controller
                 }
             }
 
-            if ($guests) {
-                foreach ($guests as $name => $values) {
-                    // [{"main": 2, "dessert": 1, "starter": 2, "guest_name": "Thalia Armstrong"}]
-                    $mealChoices[] = $values;
-                }
-                $user['meal_choice'] = json_encode($mealChoices);
-            } else {
-                $user['meal_choice'] = json_encode([]);
-            }
+            /**
+             * Disable updating meal choices!
+             */
+//            if ($guests) {
+//                foreach ($guests as $name => $values) {
+//                    // [{"main": 2, "dessert": 1, "starter": 2, "guest_name": "Thalia Armstrong"}]
+//                    $mealChoices[] = $values;
+//                }
+//                $user['meal_choice'] = json_encode($mealChoices);
+//            } else {
+//                $user['meal_choice'] = json_encode([]);
+//            }
 
             $user->save();
 
@@ -52,14 +55,5 @@ class RsvpController extends Controller
                 'message' => 'Saved!'
             ]);
         }
-    }
-
-    private function bhdebug($data)
-    {
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
-        die();
-        exit();
     }
 }
